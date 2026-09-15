@@ -15,3 +15,13 @@
 .secondary-color{
     color: #422AD5;
 }
+.details-btn{
+    background-color: #e8f4ff;
+}
+
+/* Active Lesson Button Style */
+.active-lesson{
+    background-color: #422ad5;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
