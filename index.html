@@ -21,33 +21,88 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-    <header>
-        <div class="navbar bg-base-100 shadow-sm">
-            <div class="flex-1">
-                <a class="text-xl font-bold flex justify-start items-center">English <img src="/assets/logo.png" alt="English Janala Logo" class="w-10 h-10 ml-2"><span>জানালা</span></a>
-               
+    <header class="bg-[#edf6ff]">
+        <div class="navbar w-11/12 mx-auto ">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg aria-label="Menu" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="-1" class="menu menu-sm dropdown-content z-1 mt-3 w-52 p-2 space-y-2">
+                        <li><button
+                                class="btn py-4 px-2 hover:bg-transparent text-[#422AD5] text-base border-[#422AD5] border-1">
+                                <i class="fa-solid fa-circle-question text-base"></i>FAQ
+                            </button></li>
+                        <li><button
+                                class="btn py-4 px-2 hover:bg-transparent text-[#422AD5] text-base border-[#422AD5] border-1">
+                                <i class="fa-solid fa-book-open text-base"></i>Learn
+                            </button></li>
+                        <li><button
+                                class="btn py-4 px-2 hover:bg-transparent text-[#422AD5] text-base border-[#422AD5] border-1">
+                                <i class="fa-solid fa-arrow-right-from-bracket text-base"></i>LogOut
+                            </button></li>
+                    </ul>
+                </div>
+                <a class="text-xl font-bold flex justify-start items-center">English <img class="w-100%"
+                        src="/assets/logo.png" alt="English Janala Logo" class="w-10 h-10 ml-2"><span
+                        class="font-bangla text-xl font-bold">জানালা</span></a>
             </div>
-            <div class="flex-none">
-                <ul class="menu menu-horizontal px-1">
-                    <li><a>Link</a></li>
-                    <li>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul class="bg-base-100 rounded-t-none p-2">
-                                <li><a>Link 1</a></li>
-                                <li><a>Link 2</a></li>
-                            </ul>
-                        </details>
-                    </li>
+            <div class="navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal space-x-6">
+                    <li><button
+                            class="btn py-4 px-2 hover:bg-transparent text-[#422AD5] text-base border-[#422AD5] border-1">
+                            <i class="fa-solid fa-circle-question text-base"></i>FAQ
+                        </button></li>
+                    <li><button
+                            class="btn py-4 px-2 hover:bg-transparent text-[#422AD5] text-base border-[#422AD5] border-1">
+                            <i class="fa-solid fa-book-open text-base"></i>Learn
+                        </button></li>
+                    <li><button
+                            class="btn py-4 px-2 hover:bg-transparent text-[#422AD5] text-base border-[#422AD5] border-1">
+                            <i class="fa-solid fa-arrow-right-from-bracket text-base"></i>LogOut
+                        </button></li>
                 </ul>
             </div>
         </div>
     </header>
-    <main>
+    <main class="w-11/12 mx-auto">
+        <section class="lg:py-20 flex-col-reverse flex justify-between items-center md:flex-row">
+            <!-- Hero Text Container -->
+            <div class="lg:w-6/12 space-y-4">
+                <h1 class="text-4xl font-bold"><span class="primary-color">English</span> is Easy!!</h1>
+                <p class="text-lg font-bangla">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা<br>
+                    আপনার
+                    দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে<br> যাবে অন্য একটি Level এ</p>
+                <div class="flex flex-col space-x-0 space-y-4 items-left justify-center">
+                    <input type="text" class="input" placeholder="Enter Your Name" />
+                    <input type="password" class="input" placeholder="..............." />
+                    <button class="btn btn-neutral max-w-fit">Get Started</button>
+                </div>
+            </div>
+            <!-- Hero Image Container -->
+            <div class="w-6/12 flex justify-end items-center">
+                <img src="/assets/hero-student.png" alt="Hero Image">
+            </div>
+        </section>
+        <!-- Vocabulary Section  -->
+        <section class="lg:py-20 py-6">
+            <div class="lg:space-y-4 space-y-1">
+                <h3 class="text-3xl font-semibold text-center"><span class="primary-color">Let's</span> Learn
+                    Vocabularies</h3>
+                <p class="text-lg font-bangla text-center">Expand your vocabulary with our interactive lessons</p>
+                <div id="lesson-container" class="flex flex-wrap justify-center items-center gap-4">
+                    <!-- Lesson cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
     </main>
     <!-- JavaScript file -->
     <script src="./js/index.js"></script>
