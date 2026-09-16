@@ -11,16 +11,38 @@
 //     `).join('')
 
 // });
+
+const showSpinner = (status) => {
+    if (status == true) {
+        document.getElementById('loadingSpinner').classList.remove("hidden")
+        document.getElementById('lesson-details-container').classList.add('hidden')
+    } else {
+        document.getElementById('loadingSpinner').classList.add("hidden")
+        document.getElementById('lesson-details-container').classList.remove("hidden")
+        
+    }
+
+
+}
+
+const createElements = (arr) =>
+    arr
+        .map(
+            (element) => `
+        <span class="btn bg-blue-100 rounded-sm text-xl font-normal">
+          ${element}
+        </span>
+      `
+        )
+        .join("");
+
 const lessonButton = () => {
     const lessonBtn = document.querySelectorAll(".lesson-btn")
     lessonBtn.forEach(btn => btn.classList.remove('active-lesson'))
 }
 
-
-
-
-
 const loadWordLevel = (lessonId) => {
+    showSpinner(true)
     const uri = (`https://openapi.programming-hero.com/api/level/${lessonId}`)
     fetch(uri)
         .then(res => res.json())
@@ -32,6 +54,38 @@ const loadWordLevel = (lessonId) => {
         })
 }
 
+const loadDetails = async (id) => {
+    const url = (`https://openapi.programming-hero.com/api/word/${id}`)
+    const res = await fetch(url)
+    const details = await res.json()
+    displayDetails(details.data)
+}
+
+const displayDetails = (details) => {
+    const detailsContainer = document.getElementById('details-container')
+    detailsContainer.innerHTML = ""
+    document.getElementById("details_modal").showModal()
+    const detailsModal = document.createElement('div')
+    console.log(details);
+    detailsModal.innerHTML = `
+                <div class="rounded-lg border-blue-100 border bg-gray-50 space-y-4 p-6">
+                <h2 class="text-2xl font-bold font-bangla">${details.word ? details.word : " কোনো শব্দ পাওয়া যায়নি"} (<i class="fa-solid fa-microphone-lines"></i>: ${details.pronunciation} )</h2>
+                <div>
+                <p class="font-semibold text-xl mb-2">Meaning</p>
+                <p class="text-2xl font-medium font-bangla">${details.meaning ? details.meaning : "অর্থ পাওয়া যায়নি"}</p>
+                </div>
+                <div>
+                <p class="font-semibold text-xl">Example</p>
+                <p class="text-xl font-normal font-bangla">${details.sentence ? details.sentence : "Sentence পাওয়া যায়নি"}</p>
+                </div>
+                <div class="space-y-2">
+                <p class="font-semibold text-xl font-bangla">সমার্থক শব্দ গুলো</p>
+                <div>${createElements(details.synonyms)}</div>
+                </div>
+                </div>
+                `
+    detailsContainer.append(detailsModal)
+}
 
 const getLessonDetails = (data) => {
     const lessonDetails = document.getElementById('lesson-details-container')
@@ -53,6 +107,8 @@ const getLessonDetails = (data) => {
     </div>
         
         `
+        showSpinner(false)
+        return
     }
     data.forEach(wordDetails => {
         const wordCard = document.createElement('div');
@@ -63,7 +119,7 @@ const getLessonDetails = (data) => {
                 <p class="font-semibold text-xl">Meaning / Pronunciation</p>
                 <p class="text-2xl font-bold font-bangla">${wordDetails.meaning ? wordDetails.meaning : "অর্থ পাওয়া যায়নি"} / ${wordDetails.pronunciation}</p>
                 <div class="card-actions flex justify-between items-center">
-                <button class="rounded-full text-xl p-2 btn hover:bg-blue-400"><i class="fa-solid fa-circle-info"></i></button>
+                <button id="details_${wordDetails.id}" onclick="loadDetails(${wordDetails.id})" class="rounded-full text-xl p-2 btn hover:bg-blue-400"><i class="fa-solid fa-circle-info"></i></button>
                 <button class="rounded-full text-xl p-2 btn hover:bg-blue-400"><i class="fa-solid fa-volume"></i></button>
 
             </div>
@@ -71,6 +127,7 @@ const getLessonDetails = (data) => {
         </div>
                 `
         lessonDetails.append(wordCard)
+        showSpinner(false)
     })
 }
 
