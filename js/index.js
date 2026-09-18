@@ -19,17 +19,25 @@ const showSpinner = (status) => {
     } else {
         document.getElementById('loadingSpinner').classList.add("hidden")
         document.getElementById('lesson-details-container').classList.remove("hidden")
-        
+
     }
 
 
+}
+
+const pronounceWord = (word) => {
+    const utterance = new SpeechSynthesisUtterance(word);
+
+    utterance.lang = "en-US";
+
+    window.speechSynthesis.speak(utterance);
 }
 
 const createElements = (arr) =>
     arr
         .map(
             (element) => `
-        <span class="btn bg-blue-100 rounded-sm text-xl font-normal">
+        <span class="btn bg-blue-100 rounded-sm mb-1 text-xl font-normal">
           ${element}
         </span>
       `
@@ -92,7 +100,7 @@ const getLessonDetails = (data) => {
     lessonDetails.innerHTML = "";
     if (data.length == 0) {
         lessonDetails.innerHTML = `
-        <div class="flex justify-center items-center flex-col space-y-4 grow">
+        <div class="flex justify-center items-center mx-auto space-y-4 grow">
          <div class="flex  w-16 items-center justify-center">
          <img src="./assets/alert-error.png">
          </div>
@@ -112,6 +120,7 @@ const getLessonDetails = (data) => {
     }
     data.forEach(wordDetails => {
         const wordCard = document.createElement('div');
+        wordCard.classList.add = "flex items-center mx-auto"
         wordCard.innerHTML = `
                 <div class="card w-96 card-border bg-base-100">
                 <div class="card-body text-center space-y-5">
@@ -120,7 +129,7 @@ const getLessonDetails = (data) => {
                 <p class="text-2xl font-bold font-bangla">${wordDetails.meaning ? wordDetails.meaning : "অর্থ পাওয়া যায়নি"} / ${wordDetails.pronunciation}</p>
                 <div class="card-actions flex justify-between items-center">
                 <button id="details_${wordDetails.id}" onclick="loadDetails(${wordDetails.id})" class="rounded-full text-xl p-2 btn hover:bg-blue-400"><i class="fa-solid fa-circle-info"></i></button>
-                <button class="rounded-full text-xl p-2 btn hover:bg-blue-400"><i class="fa-solid fa-volume"></i></button>
+                <button onclick="pronounceWord('${wordDetails.word}')"  class="rounded-full text-xl p-2 btn hover:bg-blue-400"><i class="fa-solid fa-volume"></i></button>
 
             </div>
           </div>
@@ -151,3 +160,22 @@ const displayLessons = (lessons) => {
     })
 }
 getLessons();
+
+document.getElementById("btn-search").addEventListener("click", () => {
+    lessonButton();
+    const input = document.getElementById("input-search");
+    const searchValue = input.value.trim().toLowerCase();
+    const url = ("https://openapi.programming-hero.com/api/words/all");
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            const allWords = data.data;
+            const filterWords = allWords.filter((word) => word.word.toLowerCase().includes(searchValue));
+            // console.log(filterWords);
+            getLessonDetails(filterWords)
+        })
+})
+
+// Footer section CurrentYear function 
+const currentYear = document.getElementById("current-year");
+currentYear.textContent = new Date().getFullYear();
