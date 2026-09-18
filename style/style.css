@@ -1,7 +1,11 @@
 *{
       font-family: "Poppins", sans-serif;
-
+      box-sizing: border-box;
 }
+  body {
+    margin: 0;
+    padding: 0;
+  }
 .font-bangla{
     font-family: "Hind Siliguri", sans-serif;
 }

@@ -100,7 +100,7 @@ const getLessonDetails = (data) => {
     lessonDetails.innerHTML = "";
     if (data.length == 0) {
         lessonDetails.innerHTML = `
-        <div class="flex justify-center items-center mx-auto space-y-4 grow">
+        <div class="flex justify-center items-center flex-col py-14 mx-auto space-y-4 grow">
          <div class="flex  w-16 items-center justify-center">
          <img src="./assets/alert-error.png">
          </div>
@@ -152,8 +152,8 @@ const displayLessons = (lessons) => {
     lessons.forEach(lesson => {
         const lessonDiv = document.createElement('div');
         lessonDiv.innerHTML = `
-       <div class="card flex justify-center items-center">
-       <button id="active-lesson-${lesson.level_no}" onclick="loadWordLevel(${lesson.level_no})" class="btn lesson-btn border-1 border-primary text-lg font-normal secondary-color "><i class="fa-solid fa-book-open"></i> Lesson -${lesson.level_no}</button>
+       <div class="card flex justify-center flex-wrap sm:gap-1 items-center">
+       <button id="active-lesson-${lesson.level_no}" onclick="loadWordLevel(${lesson.level_no})" class="btn lesson-btn border-1 border-primary lg:text-lg text-sm lg:font-normal secondary-color "><i class="fa-solid fa-book-open"></i> Lesson -${lesson.level_no}</button>
        </div>
 `
         lessonContainer.append(lessonDiv)

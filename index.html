@@ -74,14 +74,17 @@
             </div>
         </div>
     </header>
-    <main class="w-11/12 mx-auto">
+    <main class="w-11/12 mx-auto page">
         <section class="lg:py-20 flex-col-reverse flex justify-between items-center md:flex-row">
             <!-- Hero Text Container -->
             <div class="lg:w-6/12 space-y-4">
-                <h1 class="text-4xl font-bold"><span class="primary-color">English</span> is Easy!!</h1>
-                <p class="text-lg font-bangla">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা<br>
-                    আপনার
-                    দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে<br> যাবে অন্য একটি Level এ</p>
+                <h1 class="lg:text-4xl font-bold text-xl"><span class="primary-color">English</span> is
+                    Easy!!</h1>
+                <p class="text-sm sm:text-base lg:text-xl lg:w-3/5 text-gray-700 font-bangla leading-7">
+                    আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+                    দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য
+                    একটি Level এ।
+                </p>
                 <div class="flex flex-col space-x-0 space-y-4 items-left justify-center">
                     <input type="text" class="input" placeholder="Enter Your Name" />
                     <input type="password" class="input" placeholder="..............." />
@@ -94,11 +97,12 @@
             </div>
         </section>
         <!-- Vocabulary Section  -->
-        <section class="lg:py-20 py-6">
+        <section class="lg:pt-20 py-6">
             <div class="lg:space-y-4 space-y-1">
-                <h3 class="text-4xl font-semibold text-center"><span class="primary-color">Let's</span> Learn
+                <h3 class="lg:text-4xl text-xl font-bold text-center"><span class="primary-color">Let's</span> Learn
                     Vocabularies</h3>
-                <p class="text-lg font-bangla text-center">Expand your vocabulary with our interactive lessons</p>
+                <p class="lg:text-lg text-base py-1 font-bangla text-center">Expand your vocabulary with our interactive
+                    lessons</p>
                 <div id="lesson-container" class="flex flex-wrap justify-center items-center gap-4">
                     <!-- Lesson cards will be dynamically inserted here -->
                 </div>
@@ -119,8 +123,8 @@
                 </div>
             </div>
             <div id="lesson-details-container"
-                class="bg-gray-100 rounded-2xl my-10 p-6 flex items-center mx-auto justify-center flex-wrap gap-6">
-                <div class="flex justify-center items-center flex-col space-y-4 grow py-10">
+                class="bg-gray-100 rounded-2xl p-6 flex flex-wrap justify-evenly items-center gap-6">
+                <div class="flex justify-center items-center flex-col space-y-4 grow lg:py-14 py-6">
                     <div class="text-center">
                         <!-- Supporting Text -->
                         <p class="text-xs font-medium font-bangla tracking-wide text-base-content/40">
@@ -155,93 +159,106 @@
         </section>
         <!-- Frequently Asked Question -->
         <section id="faq-container" class="py-10">
-            <div class="lg:py-10">
-                <h3 class="text-3xl font-bold text-center"><span class="primary-color text-3xl font-bold">Frequently
-                    </span> Asked Question</h3>
-            </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" checked="checked" />
-                <div class="collapse-title font-semibold">What is English Janala?</div>
-                <div class="collapse-content text-sm">English Janala is an interactive English vocabulary learning
-                    platform that helps learners improve their English words, meanings, pronunciation, and vocabulary
-                    skills.</div>
-            </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">How can I learn vocabulary using English Janala?</div>
-                <div class="collapse-content text-sm">Choose a vocabulary level and explore the available words. Each
-                    word provides useful information such as its meaning, pronunciation, and other learning details.
+            <div class="lg:w-8/12 mx-auto lg:text-xl text-sm">
+                <div class="lg:py-10 py-4">
+                    <h3 class="lg:text-4xl lg:font-bold text-xl font-bold text-center"><span
+                            class="primary-color lg:text-3xl text-xl font-bold">Frequently
+                        </span> Asked Question</h3>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" checked="checked" />
+                    <div class="collapse-title font-semibold">What is English Janala?</div>
+                    <div class="collapse-content text-sm">English Janala is an interactive English vocabulary learning
+                        platform that helps learners improve their English words, meanings, pronunciation, and
+                        vocabulary
+                        skills.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">How can I learn vocabulary using English Janala?</div>
+                    <div class="collapse-content text-sm">Choose a vocabulary level and explore the available words.
+                        Each
+                        word provides useful information such as its meaning, pronunciation, and other learning details.
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">Are the vocabulary words divided into different levels?
+                    </div>
+                    <div class="collapse-content text-sm">Yes. English Janala organizes vocabulary into different levels
+                        so
+                        learners can study words according to their learning stage.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">Can I listen to the pronunciation of a word?</div>
+                    <div class="collapse-content text-sm">Yes. Click the pronunciation button 🔊 to hear the selected
+                        English word using your browser's built-in speech synthesis feature.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">Does English Janala provide word meanings?</div>
+                    <div class="collapse-content text-sm">Yes. Each vocabulary item can display the meaning of the
+                        English
+                        word along with other available information from the vocabulary API.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">Where does the vocabulary data come from?</div>
+                    <div class="collapse-content text-sm">English Janala retrieves vocabulary information dynamically
+                        from
+                        an API and displays the data on the website.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">What happens if a word's meaning is unavailable?</div>
+                    <div class="collapse-content text-sm">If the meaning is not available, English Janala displays a
+                        user-friendly message instead of showing empty or undefined content.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">What happens if the requested word cannot be found?</div>
+                    <div class="collapse-content text-sm">English Janala informs the user that the requested word could
+                        not
+                        be found and encourages them to try another word.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">Do I need to reload the page to see new vocabulary?</div>
+                    <div class="collapse-content text-sm">No. Vocabulary information is loaded dynamically when you
+                        interact
+                        with the available vocabulary options.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">Can I use English Janala on mobile devices?</div>
+                    <div class="collapse-content text-sm">Yes. English Janala is designed with a responsive interface so
+                        learners can use it on smartphones, tablets, and desktop devices.</div>
                 </div>
             </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">Are the vocabulary words divided into different levels?</div>
-                <div class="collapse-content text-sm">Yes. English Janala organizes vocabulary into different levels so
-                    learners can study words according to their learning stage.</div>
-            </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">Can I listen to the pronunciation of a word?</div>
-                <div class="collapse-content text-sm">Yes. Click the pronunciation button 🔊 to hear the selected
-                    English word using your browser's built-in speech synthesis feature.</div>
-            </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">Does English Janala provide word meanings?</div>
-                <div class="collapse-content text-sm">Yes. Each vocabulary item can display the meaning of the English
-                    word along with other available information from the vocabulary API.</div>
-            </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">Where does the vocabulary data come from?</div>
-                <div class="collapse-content text-sm">English Janala retrieves vocabulary information dynamically from
-                    an API and displays the data on the website.</div>
-            </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">What happens if a word's meaning is unavailable?</div>
-                <div class="collapse-content text-sm">If the meaning is not available, English Janala displays a
-                    user-friendly message instead of showing empty or undefined content.</div>
-            </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">What happens if the requested word cannot be found?</div>
-                <div class="collapse-content text-sm">English Janala informs the user that the requested word could not
-                    be found and encourages them to try another word.</div>
-            </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">Do I need to reload the page to see new vocabulary?</div>
-                <div class="collapse-content text-sm">No. Vocabulary information is loaded dynamically when you interact
-                    with the available vocabulary options.</div>
-            </div>
-            <div class="collapse collapse-plus bg-base-100 border border-base-300">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">Can I use English Janala on mobile devices?</div>
-                <div class="collapse-content text-sm">Yes. English Janala is designed with a responsive interface so
-                    learners can use it on smartphones, tablets, and desktop devices.</div>
-            </div>
+
         </section>
     </main>
     <footer class="footer sm:footer-horizontal bg-[#edf6ff] items-center">
         <div class="w-11/12 mx-auto py-6">
             <aside class="grid-flow-col py-2 items-center">
-            <a class="text-xl font-bold flex justify-start items-center">English <img class="w-100%"
-                    src="/assets/logo.png" alt="English Janala Logo" class="w-10 h-10 ml-2"><span
-                    class="font-bangla text-xl font-bold">জানালা</span></a>
-            <p class="font-bangla pt-3 text-xl text-gray-400">ইংরেজি শিখুন সহজে</p>
-            <p class="text-base font-normal text-gray-400" >Providing Adeza Applications since <span id="current-year"></span></p>
-        </aside>
-        <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-            <h4 class="text-xl text-left py-1 text-gray-500">Follow us</h4>
-            <div class="flex space-x-1 font-bold text-2xl">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-youtube"></i>
-                <i class="fa-brands fa-square-instagram"></i>
-                <i class="fa-brands fa-square-github"></i>
-            </div>
-           
-        </nav>
+                <a class="text-xl font-bold flex justify-start items-center">English <img class="w-100%"
+                        src="/assets/logo.png" alt="English Janala Logo" class="w-10 h-10 ml-2"><span
+                        class="font-bangla text-xl font-bold">জানালা</span></a>
+                <p class="font-bangla pt-3 text-xl text-gray-400">ইংরেজি শিখুন সহজে</p>
+                <p class="text-base font-normal text-gray-400">Providing Adeza Applications since <span
+                        id="current-year"></span></p>
+            </aside>
+            <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+                <h4 class="text-xl text-left py-1 text-gray-500">Follow us</h4>
+                <div class="flex space-x-1 font-bold text-2xl">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-square-github"></i>
+                </div>
+
+            </nav>
         </div>
     </footer>
     <!-- JavaScript file -->
